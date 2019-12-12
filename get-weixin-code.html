@@ -79,7 +79,9 @@
                         'state': encodeURIComponent(state)
                     });
                 }
-
+                //执行页面跳转，首次到当前页面时，执行上述第一步，然后请求微信api的拿到code，
+                //然后利用微信再次回调当前页面，再执行上述第二部，再跳转到最终的页面
+                //类似递归
                 location.href = redirectUri;
             }
         };
